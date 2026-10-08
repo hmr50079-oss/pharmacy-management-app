@@ -1,0 +1,240 @@
+/* صيدلية الحي — ثيم هادئ: بيج دافئ + أخضر مريمي + تيل ناعم */
+:root{
+  --bg:#F3F0E8;
+  --bg2:#EAE4D6;
+  --card:#FFFDF8;
+  --line:#E3DCCB;
+  --ink:#2E3A35;
+  --muted:#7C8A83;
+  --faint:#A6B2AB;
+  --green:#5F8D7B;
+  --green-dark:#496F60;
+  --green-soft:#DFEAE2;
+  --teal:#5B8A8A;
+  --teal-soft:#D8E7E5;
+  --sand:#B99B6B;
+  --sand-soft:#F0E7D3;
+  --rose:#B97B7B;
+  --rose-soft:#F3E0DE;
+  --radius:18px;
+  --radius-sm:12px;
+  --shadow:0 10px 30px rgba(73,111,96,.10), 0 2px 6px rgba(73,111,96,.07);
+  --shadow-sm:0 3px 12px rgba(73,111,96,.09);
+  --font:"Segoe UI",Tahoma,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;font-family:var(--font);color:var(--ink);font-size:15px;line-height:1.7;
+  background:
+    radial-gradient(900px 300px at 85% -60px, rgba(95,141,123,.14), transparent 60%),
+    radial-gradient(700px 280px at 10% -40px, rgba(185,155,107,.14), transparent 60%),
+    var(--bg);
+}
+h1,h2,h3,h4{margin:0;line-height:1.4}
+p{margin:.3em 0}
+button{font-family:inherit}
+
+/* الشريط العلوي */
+.topbar{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:14px 22px;background:var(--card);border-bottom:2px solid var(--line);
+  position:sticky;top:0;z-index:20;
+}
+.brand{display:flex;gap:12px;align-items:center}
+.brand-mark{
+  width:52px;height:52px;border-radius:16px;flex:none;
+  background:linear-gradient(135deg,var(--green),var(--teal));
+  color:#fff;font-size:32px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-sm);
+}
+.brand h1{font-size:21px;font-weight:900}
+.brand p{margin:0;color:var(--muted);font-size:13px}
+.topbar-left{margin-inline-start:auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.date-pill{
+  background:var(--green-soft);color:var(--green-dark);
+  font-weight:800;font-size:13px;border-radius:24px;padding:8px 16px;
+  border:1.5px solid #C6D8CE;
+}
+
+/* الأزرار */
+.btn{
+  border:none;border-radius:13px;padding:10px 18px;font-weight:800;font-size:14px;
+  cursor:pointer;display:inline-flex;align-items:center;gap:7px;justify-content:center;
+  transition:filter .15s, transform .07s;text-decoration:none;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:linear-gradient(135deg,var(--green),var(--teal));color:#fff;box-shadow:var(--shadow-sm)}
+.btn-primary:hover{filter:brightness(1.07)}
+.btn-soft{background:var(--sand-soft);color:#7A6335;border:1.5px solid var(--line)}
+.btn-soft:hover{border-color:var(--sand)}
+.btn-ghost{background:#fff;border:2px solid var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--teal)}
+.btn-danger{background:var(--rose-soft);color:#8F4F4F;border:1.5px solid #E3C4C1}
+.btn-danger:hover{background:#EFD3D1}
+.btn-sm{padding:6px 12px;font-size:12.5px;border-radius:10px}
+
+/* الإحصائيات */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  padding:18px 22px 0;max-width:1280px;margin:0 auto;
+}
+.stat{
+  background:var(--card);border:2px solid var(--line);border-radius:var(--radius);
+  padding:15px 16px;box-shadow:var(--shadow-sm);display:flex;gap:13px;align-items:center;
+  position:relative;overflow:hidden;
+}
+.stat::after{content:"";position:absolute;top:0;right:0;left:0;height:5px;background:linear-gradient(90deg,var(--green),var(--teal));opacity:.5}
+.stat small{color:var(--muted);font-weight:800;font-size:11.5px}
+.stat strong{font-size:28px;display:block;line-height:1.2}
+.stat span{font-size:12px;color:var(--muted)}
+.stat-ic{width:52px;height:52px;border-radius:15px;flex:none;font-size:24px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center}
+.stat-ic.green{background:linear-gradient(135deg,#6FA287,#496F60)}
+.stat-ic.teal{background:linear-gradient(135deg,#6FA3A3,#476F6F)}
+.stat-ic.sand{background:linear-gradient(135deg,#C9AE7E,#96754A)}
+.stat-ic.rose{background:linear-gradient(135deg,#C49393,#8F5F5F)}
+
+/* التخطيط */
+.layout{
+  display:grid;grid-template-columns:340px 1fr;gap:16px;
+  padding:16px 22px 30px;max-width:1280px;margin:0 auto;align-items:start;
+}
+.panel{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+.patients-panel{padding:18px;position:sticky;top:96px;max-height:calc(100vh - 130px);display:flex;flex-direction:column}
+.detail-panel{padding:22px;min-height:480px}
+.panel-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.panel-head h2{font-size:18px;font-weight:900;flex:1}
+.count{background:var(--green-soft);color:var(--green-dark);font-weight:900;font-size:12px;border-radius:16px;padding:2px 12px}
+.search-box{position:relative;margin-bottom:10px}
+.search-box span{position:absolute;right:13px;top:50%;transform:translateY(-50%);color:var(--faint);font-weight:900}
+.search-box input{
+  width:100%;padding:10px 38px 10px 12px;border:2px solid var(--line);border-radius:26px;
+  background:#fff;font-family:inherit;font-size:14px;color:var(--ink);outline:none;
+}
+.search-box input:focus{border-color:var(--green)}
+.filter-row{display:flex;gap:8px;margin-bottom:12px}
+.chip{
+  flex:1;border:1.5px solid var(--line);background:#fff;border-radius:20px;padding:6px 4px;
+  font-size:12.5px;font-weight:800;color:var(--muted);cursor:pointer;
+}
+.chip.active{background:var(--green);border-color:var(--green);color:#fff}
+
+.patient-list{display:flex;flex-direction:column;gap:9px;overflow:auto;padding-inline-end:2px}
+.p-card{
+  border:2px solid var(--line);border-radius:14px;padding:11px 13px;background:#fff;
+  cursor:pointer;text-align:right;width:100%;transition:border .15s, box-shadow .15s;
+  display:flex;gap:11px;align-items:center;
+}
+.p-card:hover{border-color:var(--green);box-shadow:var(--shadow-sm)}
+.p-card.selected{border-color:var(--green);background:#F2F7F4;box-shadow:var(--shadow-sm)}
+.avatar{
+  width:46px;height:46px;border-radius:14px;flex:none;color:#fff;font-weight:900;font-size:19px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--green),var(--teal));
+}
+.p-card:nth-child(3n) .avatar{background:linear-gradient(135deg,#C9AE7E,#96754A)}
+.p-card:nth-child(3n+1) .avatar{background:linear-gradient(135deg,#6FA3A3,#476F6F)}
+.p-card strong{font-size:14.5px;display:block}
+.p-card small{color:var(--muted);font-size:12px;display:block}
+.need-dot{background:var(--rose-soft);color:#8F4F4F;font-size:11px;font-weight:900;border-radius:12px;padding:1px 9px;margin-top:4px;display:inline-block}
+
+/* التفاصيل */
+.empty{text-align:center;padding:70px 20px;color:var(--muted)}
+.empty-ic{font-size:60px;color:var(--green);opacity:.5;margin-bottom:8px}
+.empty h3{color:var(--ink);font-size:20px}
+.p-head{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.p-head .avatar{width:62px;height:62px;font-size:26px;border-radius:18px}
+.p-head h2{font-size:22px;font-weight:900}
+.p-head .sub{color:var(--muted);font-size:13px}
+.p-head .actions{margin-inline-start:auto;display:flex;gap:8px;flex-wrap:wrap}
+.info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.info{background:#F7F4EC;border:1.5px solid var(--line);border-radius:13px;padding:9px 13px}
+.info small{display:block;color:var(--green-dark);font-size:11px;font-weight:900}
+.info strong{font-size:13.5px}
+.section{border-top:2px dashed var(--line);padding-top:14px;margin-top:14px}
+.section-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.section-head h3{font-size:16px;font-weight:900;flex:1}
+.med{
+  border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px;background:#fff;
+}
+.med-top{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.med-top strong{font-size:15px}
+.dose-pill{background:var(--teal-soft);color:#3E6565;font-weight:900;font-size:12px;border-radius:14px;padding:2px 12px}
+.status-pill{font-size:11.5px;font-weight:900;border-radius:14px;padding:2px 12px}
+.status-pill.on{background:var(--green-soft);color:var(--green-dark)}
+.status-pill.off{background:#EEE;color:var(--muted)}
+.med small{color:var(--muted)}
+.med-actions{display:flex;gap:7px;margin-top:9px;flex-wrap:wrap}
+.progress{height:8px;background:#EEE9DA;border-radius:8px;overflow:hidden;margin-top:8px}
+.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--teal));border-radius:8px;transition:width .3s}
+.visit{
+  border:2px solid var(--line);border-inline-start:6px solid var(--green);
+  border-radius:13px;padding:10px 14px;margin-bottom:9px;background:#fff;
+}
+.visit.bad{border-inline-start-color:var(--rose)}
+.visit.mid{border-inline-start-color:var(--sand)}
+.visit-top{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.visit-top strong{font-size:14px}
+.visit-date{background:#F1EDE1;border-radius:12px;padding:1px 11px;font-size:12px;font-weight:800;color:#6B6046}
+.tag{font-size:11.5px;font-weight:900;border-radius:12px;padding:2px 11px}
+.tag.good{background:var(--green-soft);color:var(--green-dark)}
+.tag.mid{background:var(--sand-soft);color:#7A6335}
+.tag.bad{background:var(--rose-soft);color:#8F4F4F}
+.visit p{font-size:13.5px;color:#4A5751;margin:6px 0 0}
+.no-data{text-align:center;color:var(--faint);padding:18px;border:2px dashed var(--line);border-radius:13px;font-size:13.5px}
+
+/* النوافذ */
+#modal-root:empty{display:none}
+.modal-back{
+  position:fixed;inset:0;background:rgba(46,58,53,.45);z-index:100;
+  display:flex;align-items:flex-start;justify-content:center;padding:26px 14px;overflow:auto;
+  backdrop-filter:blur(3px);
+}
+.modal{
+  background:var(--card);border:2px solid var(--line);border-radius:20px;
+  width:100%;max-width:560px;padding:24px;box-shadow:var(--shadow);
+  border-top:7px solid var(--green);
+  animation:pop .18s ease;
+}
+.modal.lg{max-width:680px}
+@keyframes pop{from{transform:translateY(12px);opacity:0}to{transform:none;opacity:1}}
+.modal h3{font-size:19px;font-weight:900}
+.modal .sub{color:var(--muted);font-size:13px;margin-bottom:14px}
+.modal label{display:flex;flex-direction:column;gap:6px;font-weight:800;font-size:13px;margin-bottom:10px}
+.modal input,.modal select,.modal textarea{
+  font-family:inherit;font-size:14px;color:var(--ink);background:#fff;
+  border:2px solid var(--line);border-radius:11px;padding:9px 12px;width:100%;outline:none;
+}
+.modal input:focus,.modal select:focus,.modal textarea:focus{border-color:var(--green)}
+.modal textarea{min-height:70px;resize:vertical}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.modal-foot{display:flex;gap:10px;justify-content:flex-start;margin-top:16px;flex-wrap:wrap}
+.field-err{color:#A05050;font-size:12px;font-weight:700}
+
+/* التنبيهات */
+#toast-root{position:fixed;bottom:18px;right:18px;display:flex;flex-direction:column;gap:9px;z-index:200}
+.toast{
+  background:var(--card);border:2px solid var(--line);border-inline-start:7px solid var(--green);
+  border-radius:13px;padding:11px 16px;box-shadow:var(--shadow);font-size:14px;font-weight:700;
+  animation:pop .2s ease;max-width:min(360px,90vw);
+}
+.toast.err{border-inline-start-color:var(--rose)}
+.toast.warn{border-inline-start-color:var(--sand)}
+
+.foot{text-align:center;color:var(--faint);font-size:12.5px;padding:0 20px 26px}
+
+/* استجابة */
+@media(max-width:960px){
+  .layout{grid-template-columns:1fr}
+  .patients-panel{position:static;max-height:none}
+  .stats{grid-template-columns:1fr 1fr}
+  .info-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .stats{grid-template-columns:1fr 1fr;padding:12px 12px 0}
+  .layout{padding:12px 12px 24px}
+  .grid2{grid-template-columns:1fr}
+  .stat strong{font-size:22px}
+  .topbar{padding:10px 12px}
+}

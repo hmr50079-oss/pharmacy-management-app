@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صيدلية الحي — متابعة المرضى</title>
+<meta name="description" content="تطبيق بسيط لمتابعة مرضى صيدلية الحي وحالاتهم وجرعاتهم">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%235F8D7B'/><text x='50' y='70' font-size='52' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>+</text></svg>">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">+</div>
+    <div>
+      <h1>صيدلية الحي</h1>
+      <p>متابعة المرضى والجرعات</p>
+    </div>
+  </div>
+  <div class="topbar-left">
+    <span class="date-pill" id="today-label"></span>
+    <button class="btn btn-soft" id="btn-export" title="نسخة احتياطية">⤓ نسخة احتياطية</button>
+    <button class="btn btn-primary" id="btn-add-patient">+ مريض جديد</button>
+  </div>
+</header>
+
+<section class="stats">
+  <div class="stat">
+    <div class="stat-ic green">○</div>
+    <div><small>إجمالي المرضى</small><strong id="st-total">0</strong><span>ملف مسجّل</span></div>
+  </div>
+  <div class="stat">
+    <div class="stat-ic teal">◎</div>
+    <div><small>زيارات اليوم</small><strong id="st-today">0</strong><span>زيارة مسجّلة</span></div>
+  </div>
+  <div class="stat">
+    <div class="stat-ic sand">⬣</div>
+    <div><small>أدوية قيد المتابعة</small><strong id="st-meds">0</strong><span>دواء نشط</span></div>
+  </div>
+  <div class="stat">
+    <div class="stat-ic rose">◷</div>
+    <div><small>بحاجة لمتابعة</small><strong id="st-need">0</strong><span>لم يزوروا منذ 14 يوم</span></div>
+  </div>
+</section>
+
+<main class="layout">
+  <!-- قائمة المرضى -->
+  <aside class="panel patients-panel">
+    <div class="panel-head">
+      <h2>المرضى</h2>
+      <span class="count" id="patients-count"></span>
+    </div>
+    <div class="search-box">
+      <span>⌕</span>
+      <input id="search" type="search" placeholder="ابحث بالاسم أو الهاتف أو المرض…" autocomplete="off">
+    </div>
+    <div class="filter-row">
+      <button class="chip active" data-filter="all">الكل</button>
+      <button class="chip" data-filter="need">بحاجة لمتابعة</button>
+      <button class="chip" data-filter="chronic">أمراض مزمنة</button>
+    </div>
+    <div id="patient-list" class="patient-list"></div>
+  </aside>
+
+  <!-- تفاصيل المريض -->
+  <section class="panel detail-panel" id="detail">
+    <div class="empty" id="empty-state">
+      <div class="empty-ic">◍</div>
+      <h3>اختر مريضاً من القائمة</h3>
+      <p>ستظهر هنا بياناته وأدويته وسجل زياراته وجرعاته.</p>
+      <button class="btn btn-primary" id="btn-add-first">+ إضافة أول مريض</button>
+    </div>
+    <div id="patient-detail" hidden></div>
+  </section>
+</main>
+
+<footer class="foot">صيدلية الحي — بياناتك محفوظة محلياً في متصفحك فقط · ألوان هادئة لراحة العين</footer>
+
+<div id="modal-root"></div>
+<div id="toast-root"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
