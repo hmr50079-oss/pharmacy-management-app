@@ -1,5 +1,5 @@
 /* صيدلية الحي — Service Worker: تشغيل التطبيق كاملاً دون اتصال */
-var CACHE = "hay-pharmacy-v1";
+var CACHE = "hay-pharmacy-v2";
 var ASSETS = [
   "./",
   "./index.html",
@@ -7,6 +7,7 @@ var ASSETS = [
   "./styles.css",
   "./app.js",
   "./services.js",
+  "./install.js",
   "./manifest.webmanifest",
   "./icon-192.png",
   "./icon-512.png",

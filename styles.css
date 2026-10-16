@@ -276,6 +276,15 @@ button{font-family:inherit}
 .mini-btn.danger{color:#8F4F4F}
 .mini-btn.danger:hover{border-color:var(--rose)}
 
+/* ---------- نافذة التثبيت ---------- */
+#install-pop{position:fixed;bottom:16px;right:16px;left:16px;z-index:150;display:flex;justify-content:center;opacity:0;transform:translateY(16px);transition:opacity .3s,transform .3s;pointer-events:none}
+#install-pop.show{opacity:1;transform:none;pointer-events:auto}
+.install-card{background:var(--card);border:2px solid var(--green);border-radius:16px;box-shadow:var(--shadow);padding:13px 16px;display:flex;gap:12px;align-items:center;max-width:580px;width:100%;flex-wrap:wrap}
+.install-card strong{font-size:14.5px}
+.install-card p{margin:2px 0 0;font-size:12.5px;color:var(--muted)}
+.install-ic{font-size:30px}
+@media(min-width:640px){#install-pop{left:auto}}
+
 /* استجابة */
 @media(max-width:960px){
   .layout{grid-template-columns:1fr}
