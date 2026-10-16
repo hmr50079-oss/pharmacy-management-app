@@ -223,6 +223,58 @@ button{font-family:inherit}
 .toast.warn{border-inline-start-color:var(--sand)}
 
 .foot{text-align:center;color:var(--faint);font-size:12.5px;padding:0 20px 26px}
+.foot a{color:var(--green-dark);font-weight:800;text-decoration:none}
+.foot a:hover{text-decoration:underline}
+
+/* ---------- روابط التنقل العلوية ---------- */
+.nav-links{display:flex;gap:6px;align-items:center}
+.nav-links a{
+  padding:8px 20px;border-radius:22px;font-weight:800;font-size:14px;
+  color:var(--muted);text-decoration:none;border:2px solid transparent;
+}
+.nav-links a:hover{border-color:var(--line);color:var(--ink)}
+.nav-links a.active{background:var(--green);color:#fff;box-shadow:var(--shadow-sm)}
+
+/* ---------- صفحة خدماتنا ---------- */
+.services-wrap{max-width:1280px;margin:0 auto;padding:18px 22px 30px;display:flex;flex-direction:column;gap:16px}
+.hero{padding:22px;text-align:center;margin:0}
+.hero h2{font-size:24px;font-weight:900}
+.hero p{color:var(--muted);max-width:640px;margin:6px auto 0}
+.remind-strip{display:flex;gap:13px;align-items:center;padding:15px 18px;margin:0;flex-wrap:wrap}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.service-card{padding:20px;margin:0;text-align:center;display:flex;flex-direction:column;gap:8px;align-items:center}
+.service-card h3{font-size:16px;font-weight:900}
+.service-card p{color:var(--muted);font-size:13.5px;margin:0 0 4px}
+.service-ic{
+  width:58px;height:58px;border-radius:18px;font-size:28px;
+  background:linear-gradient(135deg,var(--green-soft),var(--teal-soft));
+  display:flex;align-items:center;justify-content:center;
+}
+.service-card details{width:100%;background:#F7F4EC;border:1.5px solid var(--line);border-radius:12px;padding:9px 13px;text-align:right}
+.service-card summary{cursor:pointer;font-weight:900;color:var(--green-dark);font-size:14px}
+.inline-form{display:flex;flex-direction:column;gap:9px;margin-top:10px}
+.inline-form label{display:flex;flex-direction:column;gap:6px;font-weight:800;font-size:13px;text-align:right}
+.inline-form input,.inline-form select,.inline-form textarea{
+  font-family:inherit;font-size:14px;color:var(--ink);background:#fff;
+  border:2px solid var(--line);border-radius:11px;padding:9px 12px;width:100%;outline:none;
+}
+.inline-form input:focus,.inline-form select:focus,.inline-form textarea:focus{border-color:var(--green)}
+.inline-form textarea{min-height:70px;resize:vertical}
+.feedback{padding:24px;margin:0}
+.feedback h2{font-size:20px;font-weight:900}
+.fb-summary{margin:6px 0 10px;font-size:14.5px}
+.stars{display:flex;gap:4px;margin-bottom:12px}
+.stars button{font-size:30px;background:none;border:none;cursor:pointer;color:#D8CFAE;padding:0 2px;line-height:1}
+.stars button.lit{color:#D9A441}
+.fb-list{display:flex;flex-direction:column;gap:9px;margin-top:14px}
+.fb-item{border:2px solid var(--line);border-radius:13px;padding:10px 14px;background:#fff}
+.fb-top{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.fb-top strong{flex:1}
+.fb-item p{font-size:13.5px;color:#4A5751;margin:6px 0 0}
+.mini-btn{border:2px solid var(--line);background:var(--card);border-radius:9px;padding:6px 11px;font-size:12.5px;font-weight:800;cursor:pointer;color:var(--ink)}
+.mini-btn:hover{border-color:var(--teal)}
+.mini-btn.danger{color:#8F4F4F}
+.mini-btn.danger:hover{border-color:var(--rose)}
 
 /* استجابة */
 @media(max-width:960px){
@@ -230,6 +282,8 @@ button{font-family:inherit}
   .patients-panel{position:static;max-height:none}
   .stats{grid-template-columns:1fr 1fr}
   .info-grid{grid-template-columns:1fr 1fr}
+  .services-grid{grid-template-columns:1fr}
+  .services-wrap{padding:12px 12px 24px}
 }
 @media(max-width:560px){
   .stats{grid-template-columns:1fr 1fr;padding:12px 12px 0}

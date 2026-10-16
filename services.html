@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خدماتنا — صيدلية الحي</title>
+<meta name="description" content="خدمات صيدلية الحي الإضافية: إعادة صرف، حجز موعد، استشارة، تقييم التطبيق">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%235F8D7B'/><text x='50' y='70' font-size='52' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>+</text></svg>">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">+</div>
+    <div>
+      <h1>صيدلية الحي</h1>
+      <p>متابعة المرضى والجرعات</p>
+    </div>
+  </div>
+  <nav class="nav-links">
+    <a href="index.html">الرئيسية</a>
+    <a href="services.html" class="active">خدماتنا</a>
+  </nav>
+  <div class="topbar-left">
+    <span class="date-pill" id="today-label"></span>
+    <a class="btn btn-primary" href="index.html">العودة للرئيسية</a>
+  </div>
+</header>
+
+<main class="services-wrap">
+
+  <section class="panel hero">
+    <h2>خدماتنا</h2>
+    <p>خدمات إضافية طوّرناها لراحتك: اطلب دواءك، احجز موعد متابعة، استشر الصيدلي — وقيّم تجربتك في الأسفل.</p>
+  </section>
+
+  <section class="panel remind-strip" id="remind-strip">
+    <div class="stat-ic teal">🔔</div>
+    <div style="flex:1">
+      <strong id="remind-title">تذكير جرعات اليوم</strong>
+      <p class="muted" id="remind-text" style="margin:0">…</p>
+    </div>
+    <a class="btn btn-primary btn-sm" href="index.html">تسجيل الجرعات</a>
+  </section>
+
+  <section class="services-grid">
+
+    <div class="panel service-card">
+      <div class="service-ic">💊</div>
+      <h3>طلب إعادة صرف</h3>
+      <p>انتهى دواؤك؟ أرسل طلباً وسنجهّزه لاستلامك.</p>
+      <details>
+        <summary>تقديم طلب</summary>
+        <form class="inline-form" id="form-refill">
+          <label>رقم الهاتف *<input name="phone" placeholder="05xxxxxxxx" required></label>
+          <label>اسم الدواء *<input name="med" placeholder="مثال: أملوديبين 5 ملغ" required></label>
+          <label>ملاحظات<input name="notes" placeholder="اختياري"></label>
+          <button class="btn btn-primary btn-sm" type="submit">إرسال الطلب</button>
+        </form>
+      </details>
+    </div>
+
+    <div class="panel service-card">
+      <div class="service-ic">📅</div>
+      <h3>حجز موعد متابعة</h3>
+      <p>احجز زيارتك القادمة لقياس الضغط أو مراجعة العلاج.</p>
+      <details>
+        <summary>حجز موعد</summary>
+        <form class="inline-form" id="form-appoint">
+          <label>الاسم *<input name="name" placeholder="الاسم الكامل" required></label>
+          <label>رقم الهاتف *<input name="phone" placeholder="05xxxxxxxx" required></label>
+          <label>التاريخ المفضل *<input name="date" type="date" required></label>
+          <button class="btn btn-primary btn-sm" type="submit">تأكيد الحجز</button>
+        </form>
+      </details>
+    </div>
+
+    <div class="panel service-card">
+      <div class="service-ic">💬</div>
+      <h3>استشارة صيدلانية</h3>
+      <p>سؤال عن دواء أو أعراض؟ اكتبه وسنرد عليك.</p>
+      <details>
+        <summary>طرح سؤال</summary>
+        <form class="inline-form" id="form-consult">
+          <label>الاسم<input name="name" placeholder="اختياري"></label>
+          <label>سؤالك *<textarea name="question" placeholder="اكتب استشارتك هنا…" required></textarea></label>
+          <button class="btn btn-primary btn-sm" type="submit">إرسال الاستشارة</button>
+        </form>
+      </details>
+    </div>
+
+    <div class="panel service-card">
+      <div class="service-ic">👨‍👩‍👧</div>
+      <h3>ملف العائلة</h3>
+      <p>تابع أدوية كل أفراد أسرتك من مكان واحد.</p>
+      <a class="btn btn-soft btn-sm" href="index.html">إدارة ملفات المرضى</a>
+    </div>
+
+    <div class="panel service-card">
+      <div class="service-ic">📄</div>
+      <h3>دليل الجرعات</h3>
+      <p>التزم بمواعيد دوائك: سجّل كل جرعة من الصفحة الرئيسية أولاً بأول.</p>
+      <a class="btn btn-soft btn-sm" href="index.html">فتح سجل الجرعات</a>
+    </div>
+
+    <div class="panel service-card">
+      <div class="service-ic">☎</div>
+      <h3>تواصل معنا</h3>
+      <p>صيدلية الحي — في خدمتكم يومياً من 8 صباحاً حتى 11 مساءً.</p>
+      <span class="dose-pill">زيارتكم تسرّنا</span>
+    </div>
+
+  </section>
+
+  <section class="panel feedback">
+    <h2>قيّم التطبيق ⭐</h2>
+    <p class="muted">رأيك يطوّر خدمتنا — قيّم تجربتك واقترح ما تتمناه.</p>
+    <div class="fb-summary" id="fb-summary"></div>
+    <div class="stars" id="stars" role="radiogroup" aria-label="التقييم بالنجوم">
+      <button type="button" data-v="1">★</button>
+      <button type="button" data-v="2">★</button>
+      <button type="button" data-v="3">★</button>
+      <button type="button" data-v="4">★</button>
+      <button type="button" data-v="5">★</button>
+    </div>
+    <form class="inline-form" id="form-feedback">
+      <div class="grid2">
+        <label>الاسم (اختياري)<input name="name" placeholder="اسمك الكريم"></label>
+        <label>تقييمك: <strong id="rating-label">اختر عدد النجوم</strong></label>
+      </div>
+      <label>مقترحاتك *<textarea name="text" placeholder="ما الذي أعجبك؟ وما الذي نقترح تحسينه؟" required></textarea></label>
+      <button class="btn btn-primary" type="submit">إرسال التقييم</button>
+    </form>
+    <div id="fb-list" class="fb-list"></div>
+  </section>
+
+</main>
+
+<footer class="foot"><a href="index.html">الرئيسية</a> · <a href="services.html">خدماتنا</a><br>صيدلية الحي — بياناتك محفوظة محلياً في متصفحك فقط · ألوان هادئة لراحة العين</footer>
+
+<div id="toast-root"></div>
+<script src="services.js"></script>
+</body>
+</html>
