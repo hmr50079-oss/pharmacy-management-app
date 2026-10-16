@@ -1,0 +1,33 @@
+{
+  "name": "صيدلية الحي — متابعة المرضى والجرعات",
+  "short_name": "صيدلية الحي",
+  "description": "تطبيق متابعة مرضى صيدلية الحي وحالاتهم وجرعاتهم",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#5F8D7B",
+  "background_color": "#F3F0E8",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
